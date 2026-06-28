@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garre Ramesh Babu – Madhu Nature Distributor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g1:#0a1f13;--g2:#112a1a;--g3:#1a3a2a;
+  --gold:#c9a84c;--gold2:#f0c96a;--gold3:#fde68a;
+  --white:#fff;--cream:#f7f2e8;
+  --muted:rgba(255,255,255,0.5);--faint:rgba(255,255,255,0.07);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--g1);color:var(--white);overflow-x:hidden}
+
+/* ─── ANIMATED BG ─── */
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;animation:orbFloat 12s ease-in-out infinite}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,#2d6a3f,transparent);top:-100px;left:-150px;animation-delay:0s}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,#c9a84c,transparent);top:40%;right:-100px;animation-delay:-4s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,#1a5c35,transparent);bottom:-50px;left:30%;animation-delay:-8s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.97)}}
+
+canvas#stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.6}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);background:rgba(10,31,19,0.8);border-bottom:1px solid rgba(201,168,76,0.12);transition:all 0.3s}
+.nav-brand{display:flex;flex-direction:column}
+.nav-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);line-height:1}
+.nav-sub{font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:32px}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.25s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-wa{display:flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);color:#4ade80;padding:8px 18px;border-radius:24px;font-size:13px;text-decoration:none;transition:all 0.2s}
+.nav-wa:hover{background:rgba(37,211,102,0.22);transform:translateY(-1px)}
+@media(max-width:700px){nav{padding:0 16px}.nav-links{display:none}.nav-sub{display:none}}
+
+/* ─── HERO ─── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 60px;z-index:1;overflow:hidden}
+.hero-bg-text{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(80px,18vw,220px);font-weight:700;color:rgba(201,168,76,0.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-4px}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);color:var(--gold2);padding:8px 20px;border-radius:30px;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:fadeUp 0.7s 0.2s forwards}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:badgePulse 2s infinite}
+@keyframes badgePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6.5vw,82px);line-height:1.06;margin-bottom:10px;opacity:0;animation:fadeUp 0.7s 0.4s forwards}
+.hero h1 .line2{color:var(--gold);font-style:italic;display:block}
+.hero-dist{font-size:14px;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;opacity:0;animation:fadeUp 0.7s 0.55s forwards}
+.hero-dist span{color:var(--gold2)}
+.hero-desc{font-size:16px;color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto 40px;line-height:1.75;opacity:0;animation:fadeUp 0.7s 0.7s forwards}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s 0.85s forwards}
+.btn-glow{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);padding:15px 36px;border-radius:40px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;box-shadow:0 0 0 rgba(201,168,76,0.4);border:none;cursor:pointer;font-family:'Inter',sans-serif}
+.btn-glow:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(201,168,76,0.45),0 0 60px rgba(201,168,76,0.15)}
+.btn-outline{background:transparent;color:var(--white);padding:15px 36px;border-radius:40px;font-size:14px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;font-family:'Inter',sans-serif}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:0;justify-content:center;margin-top:64px;opacity:0;animation:fadeUp 0.7s 1s forwards;max-width:500px;margin-left:auto;margin-right:auto}
+.stat{flex:1;padding:20px 10px;text-align:center;border-right:1px solid rgba(255,255,255,0.08)}
+.stat:last-child{border:none}
+.stat-n{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold);line-height:1}
+.stat-l{font-size:11px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 1.5s forwards}
+.hero-scroll span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.scroll-track{width:1px;height:48px;background:rgba(255,255,255,0.1);position:relative;overflow:hidden;border-radius:1px}
+.scroll-track::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent);animation:scrollTrack 1.8s ease-in-out infinite}
+@keyframes scrollTrack{to{top:200%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:0.6}}
+
+/* ─── MARQUEE ─── */
+.marquee-section{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);overflow:hidden;padding:14px 0;background:rgba(0,0,0,0.2)}
+.marquee-track{display:flex;gap:0;animation:marquee 28s linear infinite;width:max-content}
+.marquee-item{padding:0 32px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:12px}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.6}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTION COMMONS ─── */
+.section{position:relative;z-index:1;padding:100px 40px}
+.s-eye{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);line-height:1.1;margin-bottom:16px}
+.s-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:480px}
+.s-header{margin-bottom:56px}
+.s-header.center{text-align:center}
+.s-header.center .s-sub{margin:0 auto}
+
+/* ─── ABOUT DISTRIBUTOR ─── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr;gap:40px}}
+.about-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.about-circle{width:280px;height:280px;border-radius:50%;border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;position:relative;animation:rotateBorder 20s linear infinite}
+@keyframes rotateBorder{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.about-inner{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(45,90,61,0.3));border:1px solid rgba(201,168,76,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:rotateBorder 20s linear infinite reverse}
+.about-emoji{font-size:48px;margin-bottom:10px}
+.about-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold)}
+.about-role{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.about-orb{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--gold);top:10px;left:50%;transform:translateX(-50%)}
+.about-info{display:flex;flex-direction:column;gap:20px}
+.info-card{background:var(--faint);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;transition:border-color 0.3s,transform 0.3s}
+.info-card:hover{border-color:rgba(201,168,76,0.3);transform:translateX(4px)}
+.info-ic{font-size:22px;flex-shrink:0;margin-top:2px}
+.info-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.info-val{font-size:15px;color:var(--white);line-height:1.4}
+.info-val a{color:var(--gold2);text-decoration:none}
+.info-val a:hover{text-decoration:underline}
+
+/* ─── PRODUCTS ─── */
+.products-section{background:rgba(0,0,0,0.2)}
+.filter-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px;justify-content:center}
+.ftab{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.55);padding:9px 22px;border-radius:24px;font-size:13px;cursor:pointer;transition:all 0.2s;font-family:'Inter',sans-serif;letter-spacing:0.3px}
+.ftab:hover{color:var(--white);border-color:rgba(255,255,255,0.25)}
+.ftab.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);border-color:transparent;font-weight:600}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;max-width:1200px;margin:0 auto}
+.pcard{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;transition:all 0.35s;opacity:0;transform:translateY(24px);cursor:pointer}
+.pcard.vis{opacity:1;transform:translateY(0)}
+.pcard:hover{border-color:rgba(201,168,76,0.35);box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(201,168,76,0.2),inset 0 1px 0 rgba(255,255,255,0.05);transform:translateY(-8px)}
+.pcard-img{height:176px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.pcard-img img{max-height:140px;max-width:88%;object-fit:contain;transition:transform 0.4s}
+.pcard:hover .pcard-img img{transform:scale(1.1)}
+.pcard-img .fb{display:none;font-size:44px;align-items:center;justify-content:center;width:100%;height:100%}
+.pbadge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;letter-spacing:0.5px}
+.pcard-body{padding:16px}
+.pcard-name{font-family:'Playfair Display',serif;font-size:15px;line-height:1.3;margin-bottom:5px}
+.pcard-qty{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:14px}
+.pcard-prices{display:flex;align-items:baseline;justify-content:space-between}
+.p-mrp{font-size:12px;color:rgba(255,255,255,0.3);text-decoration:line-through}
+.p-dp{font-size:20px;font-weight:600;color:var(--gold)}
+.pcard-foot{border-top:1px solid rgba(255,255,255,0.06);padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+.p-bv{font-size:12px;color:var(--muted)}
+.p-bv b{color:var(--gold);font-weight:500}
+.p-enquire{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);border:none;padding:7px 16px;border-radius:12px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;opacity:0;transform:translateY(4px)}
+.pcard:hover .p-enquire{opacity:1;transform:translateY(0)}
+.pcard.hide{display:none}
+
+/* ─── BENEFITS ─── */
+.benefits-section{background:linear-gradient(180deg,rgba(0,0,0,0.15),transparent)}
+.ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.ben-card{background:var(--faint);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:32px 24px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
+.ben-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,168,76,0.06),transparent 70%);opacity:0;transition:opacity 0.3s}
+.ben-card:hover::before{opacity:1}
+.ben-card:hover{border-color:rgba(201,168,76,0.2);transform:translateY(-4px)}
+.ben-ic{font-size:40px;margin-bottom:18px;display:block}
+.ben-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:10px}
+.ben-desc{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* ─── CONTACT ─── */
+.contact-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:700px){.contact-inner{grid-template-columns:1fr;gap:32px}}
+.c-info{display:flex;flex-direction:column;gap:16px}
+.c-card{background:var(--faint);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 22px;display:flex;gap:16px;align-items:center;transition:all 0.3s;text-decoration:none;color:inherit}
+.c-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-2px);background:rgba(255,255,255,0.07)}
+.c-ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.c-ic.green{background:rgba(37,211,102,0.12)}
+.c-ic.gold{background:rgba(201,168,76,0.12)}
+.c-ic.blue{background:rgba(96,165,250,0.12)}
+.c-ic.red{background:rgba(248,113,113,0.12)}
+.c-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px}
+.c-val{font-size:14px;font-weight:500}
+.form-box{background:var(--faint);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px 28px}
+.form-title{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:24px;color:var(--white)}
+.finput{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:13px 16px;color:var(--white);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;margin-bottom:12px}
+.finput::placeholder{color:rgba(255,255,255,0.25)}
+.finput:focus{border-color:rgba(201,168,76,0.5)}
+textarea.finput{height:100px;resize:vertical;margin-bottom:0}
+.fbtn{width:100%;margin-top:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.fbtn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.35)}
+.fsuccess{display:none;margin-top:14px;background:rgba(46,160,100,0.1);border:1px solid rgba(46,160,100,0.3);border-radius:12px;padding:14px;text-align:center;color:#6ee7a0;font-size:13px}
+
+/* ─── FOOTER ─── */
+footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);padding:60px 40px 32px;text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);margin-bottom:4px}
+.footer-by{font-size:12px;color:var(--muted);margin-bottom:28px}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.18)}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wafloat{position:fixed;bottom:28px;right:28px;z-index:500;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.5);animation:waWave 2.5s ease-in-out infinite;transition:transform 0.2s}
+.wafloat:hover{transform:scale(1.12)}
+.wafloat svg{width:32px;height:32px;fill:white}
+.wa-tip{position:absolute;right:72px;background:rgba(10,31,19,0.95);border:1px solid rgba(37,211,102,0.3);color:#4ade80;font-size:12px;padding:7px 14px;border-radius:20px;white-space:nowrap;font-family:'Inter',sans-serif;backdrop-filter:blur(8px);animation:waTipPop 3s ease-in-out infinite}
+@keyframes waWave{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.5)}50%{box-shadow:0 4px 40px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)}}
+@keyframes waTipPop{0%,80%,100%{opacity:1}40%{opacity:0.6}}
+
+/* ─── TOAST ─── */
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(16px);background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);padding:12px 26px;border-radius:30px;font-size:13px;font-weight:600;z-index:999;opacity:0;transition:all 0.3s;pointer-events:none;white-space:nowrap;font-family:'Inter',sans-serif}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.65s,transform 0.65s}
+.reveal.vis{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ANIMATED BG ORBS -->
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+<canvas id="stars"></canvas>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">
+    <div class="nav-name">Garre Ramesh Babu</div>
+    <div class="nav-sub">Madhu Nature Distributor</div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-wa" href="https://wa.me/919885348591" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp Me
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-text">NATURE</div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span> Authorised Distributor — Madhu Nature</div>
+    <h1>Your Wellness,<span class="line2">Delivered Naturally</span></h1>
+    <div class="hero-dist">by <span>Garre Ramesh Babu</span> · Certified Distributor</div>
+    <p class="hero-desc">Get genuine Madhu Nature Ayurvedic products directly from an authorised distributor — best prices, fast delivery, and personal support guaranteed.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-glow">🌿 Browse Products</a>
+      <a href="https://wa.me/919885348591?text=Hi!%20I%20saw%20your%20Madhu%20Nature%20distributor%20page%20and%20I%27m%20interested%20in%20ordering." target="_blank" class="btn-outline">💬 WhatsApp Order</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">24+</div><div class="stat-l">Products</div></div>
+      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Genuine</div></div>
+      <div class="stat"><div class="stat-n">Pan</div><div class="stat-l">India Delivery</div></div>
+      <div class="stat"><div class="stat-n">Best</div><div class="stat-l">DP Prices</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-track"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="mtrack"></div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="about-circle">
+        <div class="about-inner">
+          <div class="about-emoji">🌿</div>
+          <div class="about-name">Garre Ramesh Babu</div>
+          <div class="about-role">Distributor</div>
+        </div>
+        <div class="about-orb"></div>
+      </div>
+    </div>
+    <div class="about-info reveal">
+      <div class="s-eye">About Me</div>
+      <h2 class="s-title">Your Trusted<br>Madhu Nature Partner</h2>
+      <p class="s-sub" style="margin-bottom:28px">I am an authorised distributor of Madhu Nature — a brand committed to 100% natural Ayurvedic wellness. I ensure you get genuine products at distributor prices with personalised guidance.</p>
+      <div class="info-card">
+        <div class="info-ic">📞</div>
+        <div><div class="info-label">Phone / WhatsApp</div><div class="info-val"><a href="tel:9885348591">9885348591</a></div></div>
+      </div>
+      <div class="info-card">
+        <div class="info-ic">✉️</div>
+        <div><div class="info-label">Email</div><div class="info-val"><a href="mailto:rameshbabugarre5500@gmail.com">rameshbabugarre5500@gmail.com</a></div></div>
+      </div>
+      <div class="info-card">
+        <div class="info-ic">🏢</div>
+        <div><div class="info-label">Brand</div><div class="info-val">Madhu Nature — GMP Certified, 100% Natural Ayurvedic Products</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section benefits-section">
+  <div class="s-header center reveal">
+    <div class="s-eye">Why Order From Me</div>
+    <h2 class="s-title">The Distributor Advantage</h2>
+    <p class="s-sub">Skip the middlemen. Get products straight from an authorised distributor with full support.</p>
+  </div>
+  <div class="ben-grid">
+    <div class="ben-card reveal"><span class="ben-ic">✅</span><div class="ben-title">100% Genuine</div><div class="ben-desc">Only authorised, original Madhu Nature products — no counterfeits, no compromises on quality.</div></div>
+    <div class="ben-card reveal"><span class="ben-ic">💰</span><div class="ben-title">Best DP Prices</div><div class="ben-desc">Get products at distributor prices — significant savings compared to retail MRP.</div></div>
+    <div class="ben-card reveal"><span class="ben-ic">🚀</span><div class="ben-title">Fast Delivery</div><div class="ben-desc">Pan-India delivery with quick dispatch and real order tracking for your peace of mind.</div></div>
+    <div class="ben-card reveal"><span class="ben-ic">🤝</span><div class="ben-title">Personal Support</div><div class="ben-desc">Direct WhatsApp support from me — product advice, usage guidance, and after-sales help.</div></div>
+    <div class="ben-card reveal"><span class="ben-ic">📦</span><div class="ben-title">Bulk Orders</div><div class="ben-desc">Special discounts and dedicated support for bulk orders and reseller enquiries.</div></div>
+    <div class="ben-card reveal"><span class="ben-ic">🌿</span><div class="ben-title">Ayurvedic Range</div><div class="ben-desc">Full range of 24+ natural products covering immunity, joints, skin, liver, and more.</div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products-section" id="products">
+  <div class="s-header center reveal">
+    <div class="s-eye">Product Catalogue</div>
+    <h2 class="s-title">All Madhu Nature Products</h2>
+    <p class="s-sub">Click Enquire on any product to contact me directly on WhatsApp for pricing and delivery details.</p>
+  </div>
+  <div class="filter-wrap reveal" id="ftabs">
+    <button class="ftab on" data-c="all">All Products</button>
+    <button class="ftab" data-c="capsule">Capsules</button>
+    <button class="ftab" data-c="syrup">Syrups & Juices</button>
+    <button class="ftab" data-c="personal">Personal Care</button>
+    <button class="ftab" data-c="other">Specialty</button>
+  </div>
+  <div class="pgrid" id="pgrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="s-header center reveal">
+    <div class="s-eye">Get In Touch</div>
+    <h2 class="s-title">Order or Enquire</h2>
+    <p class="s-sub">Reach out directly — I'll respond on WhatsApp within minutes!</p>
+  </div>
+  <div class="contact-inner">
+    <div class="c-info reveal">
+      <a class="c-card" href="https://wa.me/919885348591" target="_blank">
+        <div class="c-ic green">💬</div>
+        <div><div class="c-label">WhatsApp</div><div class="c-val">+91 98853 48591</div></div>
+      </a>
+      <a class="c-card" href="tel:9885348591">
+        <div class="c-ic gold">📞</div>
+        <div><div class="c-label">Phone</div><div class="c-val">9885348591</div></div>
+      </a>
+      <a class="c-card" href="mailto:rameshbabugarre5500@gmail.com">
+        <div class="c-ic blue">✉️</div>
+        <div><div class="c-label">Email</div><div class="c-val">rameshbabugarre5500@gmail.com</div></div>
+      </a>
+      <div class="c-card">
+        <div class="c-ic red">🌿</div>
+        <div><div class="c-label">Brand</div><div class="c-val">Madhu Nature — Authorised Distributor</div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="form-box">
+        <div class="form-title">Send an Enquiry</div>
+        <input class="finput" id="fn" type="text" placeholder="Your name" />
+        <input class="finput" id="fp" type="tel" placeholder="WhatsApp number" />
+        <input class="finput" id="fpr" type="text" placeholder="Product interested in" />
+        <textarea class="finput" id="fm" placeholder="Your message or query..."></textarea>
+        <button class="fbtn" onclick="sendEnquiry()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send via WhatsApp
+        </button>
+        <div class="fsuccess" id="fsuc">✅ Opening WhatsApp... I'll reply within minutes!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Garre Ramesh Babu · Madhu Nature</div>
+  <div class="footer-by">Authorised Distributor | 📞 9885348591 | ✉️ rameshbabugarre5500@gmail.com</div>
+  <div class="footer-links">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+    <a href="https://madhunature.com" target="_blank">Madhu Nature Official</a>
+  </div>
+  <div class="footer-copy">© 2026 Garre Ramesh Babu. All rights reserved. Distributor of Madhu Nature products.</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wafloat" href="https://wa.me/919885348591?text=Hi!%20I%20saw%20your%20distributor%20page%20and%20I'm%20interested%20in%20Madhu%20Nature%20products." target="_blank">
+  <span class="wa-tip">Order Now!</span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── STAR CANVAS ───
+const cv = document.getElementById('stars');
+const cx = cv.getContext('2d');
+let W,H,stars=[];
+function resizeCv(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}
+resizeCv(); window.addEventListener('resize',resizeCv);
+for(let i=0;i<140;i++) stars.push({x:Math.random()*9999,y:Math.random()*9999,r:Math.random()*1.5+0.3,o:Math.random(),do:Math.random()*0.008+0.002,vx:(Math.random()-0.5)*0.15,vy:(Math.random()-0.5)*0.15});
+function drawStars(){
+  cx.clearRect(0,0,W,H);
+  stars.forEach(s=>{
+    s.x+=s.vx; s.y+=s.vy; s.o+=s.do;
+    if(s.o>1||s.o<0) s.do*=-1;
+    if(s.x<0)s.x=W; if(s.x>W)s.x=0; if(s.y<0)s.y=H; if(s.y>H)s.y=0;
+    cx.beginPath(); cx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    cx.fillStyle=`rgba(255,248,220,${s.o*0.7})`; cx.fill();
+  });
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+
+// ─── MARQUEE ───
+const items=['Immunity Boosters','Liver Care','Kidney Support','Joint Relief','Skin Care','Hair Care','Diabetes Care','Weight Management','Ayurvedic Capsules','Herbal Juices','Natural Soaps','Dental Care','100% Natural','GMP Certified','Pan India Delivery'];
+const mt = document.getElementById('mtrack');
+[...items,...items].forEach(t=>{
+  const d=document.createElement('div'); d.className='marquee-item';
+  d.innerHTML=`<span class="marquee-dot"></span>${t}`;
+  mt.appendChild(d);
+});
+
+// ─── PRODUCTS ───
+const BASE='https://madhunature.com/HTML/';
+const prods=[
+  {n:'Miraacle Nova',q:'90 units',m:'₹3,999',d:'₹3,000',b:'₹2,000',img:BASE+'pics/p7.jpeg',c:'capsule',badge:'Bestseller'},
+  {n:'Liver Care Syrup',q:'200ml',m:'₹190',d:'₹175',b:'₹100',img:BASE+'images/pro4.jpg',c:'syrup'},
+  {n:'Kidney Stone Crush',q:'60 capsules',m:'₹1,250',d:'₹1,000',b:'₹700',img:BASE+'pics/p5.png',c:'capsule'},
+  {n:'M Pulse Juice',q:'1000ml',m:'₹2,500',d:'₹2,000',b:'₹1,400',img:BASE+'pics/mpulse.jpg',c:'syrup',badge:'Popular'},
+  {n:'Stemcell Capsule',q:'60 capsules',m:'₹2,500',d:'₹2,000',b:'₹1,400',img:BASE+'pics/stem.jpg',c:'capsule'},
+  {n:'Horse Fire',q:'100gm',m:'₹1,600',d:'₹1,400',b:'₹1,000',img:BASE+'pics/horse.jpg',c:'other'},
+  {n:'Piles Relief Syrup',q:'1000ml',m:'₹900',d:'₹750',b:'₹500',img:BASE+'pics/piles.jpg',c:'syrup'},
+  {n:'Ortho Relief Oil',q:'100ml',m:'₹399',d:'₹300',b:'₹200',img:BASE+'pics/ortho.jpg',c:'syrup'},
+  {n:'Panch Tulasi Drops',q:'30ml',m:'₹250',d:'₹200',b:'₹150',img:BASE+'pics/panch.jpg',c:'syrup'},
+  {n:'Artho-Pro',q:'60 capsules',m:'₹1,650',d:'₹1,400',b:'₹1,000',img:BASE+'images/pro1.jpg',c:'capsule'},
+  {n:'Keto-Slim',q:'60 capsules',m:'₹1,850',d:'₹1,600',b:'₹1,200',img:BASE+'images/pro2.jpg',c:'capsule',badge:'New'},
+  {n:'Diabtose Capsule',q:'60 capsules',m:'₹1,250',d:'₹1,000',b:'₹700',img:BASE+'images/pro3.jpg',c:'capsule'},
+  {n:'Sandal Beauty Soap',q:'100gm',m:'₹95',d:'₹80',b:'₹50',img:BASE+'products/SANDAL BEAUTY SOAP.png',c:'personal'},
+  {n:'Cow Panchakam Soap',q:'100gm',m:'₹95',d:'₹80',b:'₹50',img:BASE+'products/COW PANCHAKAM SOAP.png',c:'personal'},
+  {n:'Safran Beauty Soap',q:'100gm',m:'₹95',d:'₹80',b:'₹50',img:BASE+'products/kesar(1).png',c:'personal'},
+  {n:'Ayu Anti Dandruff Shampoo',q:'200ml',m:'₹299',d:'₹250',b:'₹175',img:BASE+'products/AYU NITTI DANDRUFF SHAMPOO.png',c:'personal'},
+  {n:'Raktha Safe Syrup',q:'200ml',m:'₹199',d:'₹175',b:'₹100',img:BASE+'pics/m5.png',c:'syrup'},
+  {n:'Ayutus Capsule',q:'1000mg',m:'₹1,250',d:'₹1,000',b:'₹700',img:BASE+'products/AYUTUSCAPSULE.png',c:'capsule'},
+  {n:'Ayu Dento Cream',q:'100gm',m:'₹150',d:'₹125',b:'₹50',img:BASE+'products/AYU DENTO CREAM.png',c:'personal'},
+  {n:'Alkaline Mineral Drops',q:'100ml',m:'₹500',d:'₹400',b:'₹300',img:BASE+'products/frist-product.png',c:'other'},
+  {n:'Antavis Syrup',q:'200ml',m:'₹199',d:'₹175',b:'₹100',img:BASE+'pics/m1.png',c:'syrup'},
+  {n:'Cough Free Tonic',q:'100ml',m:'₹90',d:'₹80',b:'₹50',img:BASE+'pics/m2.png',c:'syrup'},
+  {n:'Ortho Reliever Syrup',q:'200ml',m:'₹199',d:'₹175',b:'₹100',img:BASE+'pics/m3.png',c:'syrup'},
+  {n:'She-Vital Syrup',q:'200ml',m:'₹199',d:'₹175',b:'₹100',img:BASE+'pics/m4.png',c:'syrup'},
+];
+const emo={capsule:'💊',syrup:'🌿',personal:'✨',other:'🌱'};
+const grid=document.getElementById('pgrid');
+prods.forEach(p=>{
+  const div=document.createElement('div');
+  div.className='pcard'; div.dataset.c=p.c;
+  div.innerHTML=`
+    <div class="pcard-img">
+      <img src="${p.img}" alt="${p.n}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="fb">${emo[p.c]||'🌿'}</div>
+      ${p.badge?`<div class="pbadge">${p.badge}</div>`:''}
+    </div>
+    <div class="pcard-body">
+      <div class="pcard-name">${p.n}</div>
+      <div class="pcard-qty">${p.q}</div>
+      <div class="pcard-prices"><span class="p-mrp">${p.m}</span><span class="p-dp">${p.d}</span></div>
+    </div>
+    <div class="pcard-foot">
+      <div class="p-bv">BV <b>${p.b}</b></div>
+      <button class="p-enquire" onclick="enquireProd('${p.n}','${p.d}')">Enquire →</button>
+    </div>`;
+  grid.appendChild(div);
+});
+
+// Filter
+document.getElementById('ftabs').addEventListener('click',e=>{
+  const t=e.target.closest('.ftab'); if(!t) return;
+  document.querySelectorAll('.ftab').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  const c=t.dataset.c;
+  document.querySelectorAll('.pcard').forEach(x=>x.classList.toggle('hide',c!=='all'&&x.dataset.c!==c));
+});
+
+// Enquire
+function enquireProd(name,price){
+  const msg=encodeURIComponent(`Hi Garre Ramesh Babu! 🌿\nI'm interested in: *${name}*\nDP Price: ${price}\n\nPlease share availability and delivery details.`);
+  window.open(`https://wa.me/919885348591?text=${msg}`,'_blank');
+  toast(`Opening WhatsApp for ${name}...`);
+}
+
+// Contact form
+function sendEnquiry(){
+  const n=document.getElementById('fn').value.trim();
+  const p=document.getElementById('fp').value.trim();
+  const pr=document.getElementById('fpr').value.trim();
+  const m=document.getElementById('fm').value.trim();
+  if(!n||!p){toast('⚠ Please enter name and phone number');return;}
+  const msg=encodeURIComponent(`Hi Garre Ramesh Babu! 🌿\nName: ${n}\nPhone: ${p}\nProduct: ${pr||'General enquiry'}\nMessage: ${m||'Interested in your products'}\n\nPlease get in touch.`);
+  window.open(`https://wa.me/919885348591?text=${msg}`,'_blank');
+  document.getElementById('fsuc').style.display='block';
+  toast('✅ WhatsApp opened!');
+}
+
+// Toast
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// Scroll reveal
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);ro.unobserve(e.target);}
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal,.pcard').forEach(el=>ro.observe(el));
+
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.borderBottomColor=window.scrollY>40?'rgba(201,168,76,0.2)':'rgba(201,168,76,0.12)';
+});
+</script>
+</body>
+</html>
