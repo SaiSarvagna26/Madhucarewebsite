@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Garre Ramesh Babu – Madhu Nature Distributor</title>
+<meta name="description" content="Authorised Madhu Nature distributor — 100% genuine Ayurvedic products at distributor prices with pan-India delivery. Contact Garre Ramesh Babu.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -15,7 +16,6 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--g1);color:var(--white);overflow-x:hidden}
-
 /* ─── ANIMATED BG ─── */
 .bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;animation:orbFloat 12s ease-in-out infinite}
@@ -23,9 +23,7 @@ body{font-family:'Inter',sans-serif;background:var(--g1);color:var(--white);over
 .orb2{width:500px;height:500px;background:radial-gradient(circle,#c9a84c,transparent);top:40%;right:-100px;animation-delay:-4s}
 .orb3{width:400px;height:400px;background:radial-gradient(circle,#1a5c35,transparent);bottom:-50px;left:30%;animation-delay:-8s}
 @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.97)}}
-
 canvas#stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.6}
-
 /* ─── NAV ─── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);background:rgba(10,31,19,0.8);border-bottom:1px solid rgba(201,168,76,0.12);transition:all 0.3s}
 .nav-brand{display:flex;flex-direction:column}
@@ -39,7 +37,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:68px;d
 .nav-wa{display:flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);color:#4ade80;padding:8px 18px;border-radius:24px;font-size:13px;text-decoration:none;transition:all 0.2s}
 .nav-wa:hover{background:rgba(37,211,102,0.22);transform:translateY(-1px)}
 @media(max-width:700px){nav{padding:0 16px}.nav-links{display:none}.nav-sub{display:none}}
-
 /* ─── HERO ─── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 60px;z-index:1;overflow:hidden}
 .hero-bg-text{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(80px,18vw,220px);font-weight:700;color:rgba(201,168,76,0.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-4px}
@@ -69,14 +66,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:68px;d
 @keyframes scrollTrack{to{top:200%}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:0.6}}
-
 /* ─── MARQUEE ─── */
 .marquee-section{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);overflow:hidden;padding:14px 0;background:rgba(0,0,0,0.2)}
 .marquee-track{display:flex;gap:0;animation:marquee 28s linear infinite;width:max-content}
 .marquee-item{padding:0 32px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:12px}
 .marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.6}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
 /* ─── SECTION COMMONS ─── */
 .section{position:relative;z-index:1;padding:100px 40px}
 .s-eye{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
@@ -85,8 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:68px;d
 .s-header{margin-bottom:56px}
 .s-header.center{text-align:center}
 .s-header.center .s-sub{margin:0 auto}
-
-/* ─── ABOUT DISTRIBUTOR ─── */
+/* ─── ABOUT ─── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto}
 @media(max-width:800px){.about-grid{grid-template-columns:1fr;gap:40px}}
 .about-visual{position:relative;display:flex;align-items:center;justify-content:center}
@@ -105,35 +99,163 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:68px;d
 .info-val{font-size:15px;color:var(--white);line-height:1.4}
 .info-val a{color:var(--gold2);text-decoration:none}
 .info-val a:hover{text-decoration:underline}
-
 /* ─── PRODUCTS ─── */
 .products-section{background:rgba(0,0,0,0.2)}
 .filter-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px;justify-content:center}
 .ftab{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.55);padding:9px 22px;border-radius:24px;font-size:13px;cursor:pointer;transition:all 0.2s;font-family:'Inter',sans-serif;letter-spacing:0.3px}
 .ftab:hover{color:var(--white);border-color:rgba(255,255,255,0.25)}
 .ftab.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);border-color:transparent;font-weight:600}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;max-width:1200px;margin:0 auto}
-.pcard{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;transition:all 0.35s;opacity:0;transform:translateY(24px);cursor:pointer}
-.pcard.vis{opacity:1;transform:translateY(0)}
-.pcard:hover{border-color:rgba(201,168,76,0.35);box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(201,168,76,0.2),inset 0 1px 0 rgba(255,255,255,0.05);transform:translateY(-8px)}
-.pcard-img{height:176px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.pcard-img img{max-height:140px;max-width:88%;object-fit:contain;transition:transform 0.4s}
-.pcard:hover .pcard-img img{transform:scale(1.1)}
-.pcard-img .fb{display:none;font-size:44px;align-items:center;justify-content:center;width:100%;height:100%}
-.pbadge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;letter-spacing:0.5px}
-.pcard-body{padding:16px}
-.pcard-name{font-family:'Playfair Display',serif;font-size:15px;line-height:1.3;margin-bottom:5px}
-.pcard-qty{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:14px}
-.pcard-prices{display:flex;align-items:baseline;justify-content:space-between}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+/* ─── 3D PRODUCT CARD ─── */
+.pcard-wrap{perspective:1000px;opacity:0;transform:translateY(32px);transition:opacity 0.6s,transform 0.6s}
+.pcard-wrap.vis{opacity:1;transform:translateY(0)}
+.pcard-wrap.hide{display:none}
+.pcard{
+  position:relative;
+  background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  transform:rotateX(0deg) rotateY(0deg) scale(1);
+  transition:transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s;
+  cursor:pointer;
+  will-change:transform;
+}
+/* animated scanline video-effect */
+.pcard::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,255,120,0.015) 2px,
+    rgba(0,255,120,0.015) 4px
+  );
+  pointer-events:none;
+  z-index:4;
+  animation:scanMove 6s linear infinite;
+  opacity:0.5;
+}
+@keyframes scanMove{from{background-position:0 0}to{background-position:0 100px}}
+/* shimmer sweep */
+.pcard::after{
+  content:'';
+  position:absolute;
+  top:0;left:-80%;
+  width:60%;height:100%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,0.07) 50%,transparent 60%);
+  transform:skewX(-15deg);
+  animation:shimmerSweep 4s ease-in-out infinite;
+  pointer-events:none;
+  z-index:5;
+}
+@keyframes shimmerSweep{0%,100%{left:-80%}50%{left:120%}}
+/* glow ring on hover */
+.pcard-glow{
+  position:absolute;inset:-1px;border-radius:21px;
+  background:conic-gradient(from var(--angle,0deg),
+    transparent 0deg, #c9a84c 60deg, #f0c96a 120deg, transparent 180deg,
+    transparent 270deg, #4ade80 330deg, transparent 360deg);
+  opacity:0;z-index:0;
+  transition:opacity 0.4s;
+  animation:spinRing 3s linear infinite;
+}
+@property --angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spinRing{to{--angle:360deg}}
+.pcard:hover .pcard-glow,.pcard-wrap:hover .pcard-glow{opacity:1}
+.pcard-inner{position:relative;z-index:2;background:linear-gradient(145deg,rgba(15,38,24,0.97),rgba(10,25,16,0.99));border-radius:20px;overflow:hidden;height:100%}
+/* floating particles */
+.pcard-particles{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.part{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold2);opacity:0;animation:partFloat var(--dur,3s) var(--delay,0s) ease-in-out infinite}
+@keyframes partFloat{0%{opacity:0;transform:translateY(100%) scale(0)}30%{opacity:0.8}70%{opacity:0.4}100%{opacity:0;transform:translateY(-120%) scale(1.5) translateX(var(--dx,0px))}}
+.pcard-img{
+  height:190px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 60%,rgba(201,168,76,0.08),transparent 70%);
+}
+.pcard-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(10,31,19,0.8));
+  pointer-events:none;z-index:1;
+}
+.pcard-img img{
+  max-height:150px;max-width:88%;object-fit:contain;
+  transition:transform 0.5s cubic-bezier(.34,1.56,.64,1), filter 0.4s;
+  position:relative;z-index:2;
+  filter:drop-shadow(0 8px 20px rgba(201,168,76,0.2));
+}
+.pcard:hover .pcard-img img{
+  transform:scale(1.15) translateY(-6px);
+  filter:drop-shadow(0 16px 32px rgba(201,168,76,0.45));
+}
+.pcard-img .fb{display:none;font-size:52px;align-items:center;justify-content:center;width:100%;height:100%;position:relative;z-index:2;animation:iconBob 3s ease-in-out infinite}
+@keyframes iconBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.pbadge{
+  position:absolute;top:12px;left:12px;z-index:6;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--g1);font-size:10px;font-weight:700;
+  padding:4px 12px;border-radius:12px;letter-spacing:0.5px;
+  animation:badgeShine 2.5s ease-in-out infinite;
+  box-shadow:0 2px 12px rgba(201,168,76,0.5);
+}
+@keyframes badgeShine{0%,100%{box-shadow:0 2px 12px rgba(201,168,76,0.4)}50%{box-shadow:0 2px 24px rgba(201,168,76,0.8),0 0 40px rgba(201,168,76,0.2)}}
+.pcard-body{padding:16px 18px 10px}
+.pcard-name{font-family:'Playfair Display',serif;font-size:16px;line-height:1.3;margin-bottom:4px;color:var(--white)}
+.pcard-qty{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+.pcard-prices{display:flex;align-items:baseline;gap:10px}
 .p-mrp{font-size:12px;color:rgba(255,255,255,0.3);text-decoration:line-through}
-.p-dp{font-size:20px;font-weight:600;color:var(--gold)}
-.pcard-foot{border-top:1px solid rgba(255,255,255,0.06);padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+.p-dp{font-size:22px;font-weight:600;color:var(--gold);text-shadow:0 0 20px rgba(201,168,76,0.4)}
+.pcard-foot{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:12px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.02);
+}
 .p-bv{font-size:12px;color:var(--muted)}
 .p-bv b{color:var(--gold);font-weight:500}
-.p-enquire{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);border:none;padding:7px 16px;border-radius:12px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;opacity:0;transform:translateY(4px)}
-.pcard:hover .p-enquire{opacity:1;transform:translateY(0)}
-.pcard.hide{display:none}
-
+/* ─── ALWAYS VISIBLE ENQUIRE BUTTON ─── */
+.p-enquire{
+  background:linear-gradient(135deg, #0d3d22, #1a6b3c);
+  border:1px solid rgba(201,168,76,0.4);
+  color:var(--gold2);
+  padding:8px 16px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  font-family:'Inter',sans-serif;
+  transition:all 0.3s cubic-bezier(.34,1.56,.64,1);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  white-space:nowrap;
+  letter-spacing:0.3px;
+}
+.p-enquire::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  opacity:0;transition:opacity 0.3s;
+}
+.p-enquire:hover::before{opacity:1}
+.p-enquire:hover{color:var(--g1);transform:scale(1.08);box-shadow:0 6px 24px rgba(201,168,76,0.5);border-color:transparent}
+.p-enquire span{position:relative;z-index:1}
+.p-enquire-arrow{position:relative;z-index:1;transition:transform 0.3s}
+.p-enquire:hover .p-enquire-arrow{transform:translateX(4px)}
+/* pulse ring around enquire button */
+.p-enquire-wrap{position:relative;display:inline-flex}
+.p-enquire-ring{
+  position:absolute;inset:-3px;border-radius:15px;
+  border:1px solid rgba(201,168,76,0.3);
+  animation:enquireRing 2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes enquireRing{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0;transform:scale(1.15)}}
 /* ─── BENEFITS ─── */
 .benefits-section{background:linear-gradient(180deg,rgba(0,0,0,0.15),transparent)}
 .ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1100px;margin:0 auto}
@@ -144,7 +266,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 40px;height:68px;d
 .ben-ic{font-size:40px;margin-bottom:18px;display:block}
 .ben-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:10px}
 .ben-desc{font-size:13px;color:var(--muted);line-height:1.65}
-
 /* ─── CONTACT ─── */
 .contact-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px}
 @media(max-width:700px){.contact-inner{grid-template-columns:1fr;gap:32px}}
@@ -167,7 +288,6 @@ textarea.finput{height:100px;resize:vertical;margin-bottom:0}
 .fbtn{width:100%;margin-top:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
 .fbtn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.35)}
 .fsuccess{display:none;margin-top:14px;background:rgba(46,160,100,0.1);border:1px solid rgba(46,160,100,0.3);border-radius:12px;padding:14px;text-align:center;color:#6ee7a0;font-size:13px}
-
 /* ─── FOOTER ─── */
 footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);padding:60px 40px 32px;text-align:center}
 .footer-logo{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);margin-bottom:4px}
@@ -176,7 +296,6 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
 .footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
 .footer-links a:hover{color:var(--gold)}
 .footer-copy{font-size:12px;color:rgba(255,255,255,0.18)}
-
 /* ─── WHATSAPP FLOAT ─── */
 .wafloat{position:fixed;bottom:28px;right:28px;z-index:500;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.5);animation:waWave 2.5s ease-in-out infinite;transition:transform 0.2s}
 .wafloat:hover{transform:scale(1.12)}
@@ -184,18 +303,26 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
 .wa-tip{position:absolute;right:72px;background:rgba(10,31,19,0.95);border:1px solid rgba(37,211,102,0.3);color:#4ade80;font-size:12px;padding:7px 14px;border-radius:20px;white-space:nowrap;font-family:'Inter',sans-serif;backdrop-filter:blur(8px);animation:waTipPop 3s ease-in-out infinite}
 @keyframes waWave{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.5)}50%{box-shadow:0 4px 40px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1)}}
 @keyframes waTipPop{0%,80%,100%{opacity:1}40%{opacity:0.6}}
-
 /* ─── TOAST ─── */
 .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(16px);background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--g1);padding:12px 26px;border-radius:30px;font-size:13px;font-weight:600;z-index:999;opacity:0;transition:all 0.3s;pointer-events:none;white-space:nowrap;font-family:'Inter',sans-serif}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
 /* ─── SCROLL REVEAL ─── */
 .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.65s,transform 0.65s}
 .reveal.vis{opacity:1;transform:translateY(0)}
+/* ─── RESPONSIVE ─── */
+@media(max-width:600px){
+  .section{padding:60px 16px}
+  .pgrid{grid-template-columns:1fr 1fr;gap:14px}
+  .pcard-name{font-size:13px}
+  .p-dp{font-size:18px}
+  .p-enquire{padding:7px 12px;font-size:11px}
+}
+@media(max-width:400px){
+  .pgrid{grid-template-columns:1fr;gap:16px}
+}
 </style>
 </head>
 <body>
-
 <!-- ANIMATED BG ORBS -->
 <div class="bg-orbs">
   <div class="orb orb1"></div>
@@ -203,7 +330,6 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   <div class="orb orb3"></div>
 </div>
 <canvas id="stars"></canvas>
-
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-brand">
@@ -221,7 +347,6 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
     WhatsApp Me
   </a>
 </nav>
-
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg-text">NATURE</div>
@@ -246,12 +371,10 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
     <span>Scroll</span>
   </div>
 </section>
-
 <!-- MARQUEE -->
 <div class="marquee-section">
   <div class="marquee-track" id="mtrack"></div>
 </div>
-
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="about-grid">
@@ -284,7 +407,6 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
     </div>
   </div>
 </section>
-
 <!-- BENEFITS -->
 <section class="section benefits-section">
   <div class="s-header center reveal">
@@ -301,13 +423,12 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
     <div class="ben-card reveal"><span class="ben-ic">🌿</span><div class="ben-title">Ayurvedic Range</div><div class="ben-desc">Full range of 24+ natural products covering immunity, joints, skin, liver, and more.</div></div>
   </div>
 </section>
-
 <!-- PRODUCTS -->
 <section class="section products-section" id="products">
   <div class="s-header center reveal">
     <div class="s-eye">Product Catalogue</div>
     <h2 class="s-title">All Madhu Nature Products</h2>
-    <p class="s-sub">Click Enquire on any product to contact me directly on WhatsApp for pricing and delivery details.</p>
+    <p class="s-sub">Click <b style="color:var(--gold2)">Enquire Now</b> on any product to contact me directly on WhatsApp for pricing and delivery details.</p>
   </div>
   <div class="filter-wrap reveal" id="ftabs">
     <button class="ftab on" data-c="all">All Products</button>
@@ -318,7 +439,6 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   </div>
   <div class="pgrid" id="pgrid"></div>
 </section>
-
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="s-header center reveal">
@@ -361,7 +481,6 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Garre Ramesh Babu · Madhu Nature</div>
@@ -375,15 +494,12 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);p
   </div>
   <div class="footer-copy">© 2026 Garre Ramesh Babu. All rights reserved. Distributor of Madhu Nature products.</div>
 </footer>
-
 <!-- WHATSAPP FLOAT -->
 <a class="wafloat" href="https://wa.me/919885348591?text=Hi!%20I%20saw%20your%20distributor%20page%20and%20I'm%20interested%20in%20Madhu%20Nature%20products." target="_blank">
   <span class="wa-tip">Order Now!</span>
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-
 <div class="toast" id="toast"></div>
-
 <script>
 // ─── STAR CANVAS ───
 const cv = document.getElementById('stars');
@@ -391,7 +507,7 @@ const cx = cv.getContext('2d');
 let W,H,stars=[];
 function resizeCv(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}
 resizeCv(); window.addEventListener('resize',resizeCv);
-for(let i=0;i<140;i++) stars.push({x:Math.random()*9999,y:Math.random()*9999,r:Math.random()*1.5+0.3,o:Math.random(),do:Math.random()*0.008+0.002,vx:(Math.random()-0.5)*0.15,vy:(Math.random()-0.5)*0.15});
+for(let i=0;i<140;i++) stars.push({x:Math.random()*W||Math.random()*1920,y:Math.random()*H||Math.random()*1080,r:Math.random()*1.5+0.3,o:Math.random(),do:Math.random()*0.008+0.002,vx:(Math.random()-0.5)*0.15,vy:(Math.random()-0.5)*0.15});
 function drawStars(){
   cx.clearRect(0,0,W,H);
   stars.forEach(s=>{
@@ -404,7 +520,6 @@ function drawStars(){
   requestAnimationFrame(drawStars);
 }
 drawStars();
-
 // ─── MARQUEE ───
 const items=['Immunity Boosters','Liver Care','Kidney Support','Joint Relief','Skin Care','Hair Care','Diabetes Care','Weight Management','Ayurvedic Capsules','Herbal Juices','Natural Soaps','Dental Care','100% Natural','GMP Certified','Pan India Delivery'];
 const mt = document.getElementById('mtrack');
@@ -413,7 +528,6 @@ const mt = document.getElementById('mtrack');
   d.innerHTML=`<span class="marquee-dot"></span>${t}`;
   mt.appendChild(d);
 });
-
 // ─── PRODUCTS ───
 const BASE='https://madhunature.com/HTML/';
 const prods=[
@@ -443,75 +557,132 @@ const prods=[
   {n:'She-Vital Syrup',q:'200ml',m:'₹199',d:'₹175',b:'₹100',img:BASE+'pics/m4.png',c:'syrup'},
 ];
 const emo={capsule:'💊',syrup:'🌿',personal:'✨',other:'🌱'};
-const grid=document.getElementById('pgrid');
-prods.forEach(p=>{
-  const div=document.createElement('div');
-  div.className='pcard'; div.dataset.c=p.c;
-  div.innerHTML=`
-    <div class="pcard-img">
-      <img src="${p.img}" alt="${p.n}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="fb">${emo[p.c]||'🌿'}</div>
-      ${p.badge?`<div class="pbadge">${p.badge}</div>`:''}
-    </div>
-    <div class="pcard-body">
-      <div class="pcard-name">${p.n}</div>
-      <div class="pcard-qty">${p.q}</div>
-      <div class="pcard-prices"><span class="p-mrp">${p.m}</span><span class="p-dp">${p.d}</span></div>
-    </div>
-    <div class="pcard-foot">
-      <div class="p-bv">BV <b>${p.b}</b></div>
-      <button class="p-enquire" onclick="enquireProd('${p.n}','${p.d}')">Enquire →</button>
+const grid = document.getElementById('pgrid');
+prods.forEach((p, idx) => {
+  // particle positions
+  const partPositions = [
+    {left:'20%',animDur:'3.2s',delay:'0s',dx:'15px'},
+    {left:'50%',animDur:'4s',delay:'0.8s',dx:'-10px'},
+    {left:'75%',animDur:'3.6s',delay:'1.6s',dx:'20px'},
+    {left:'35%',animDur:'2.8s',delay:'2s',dx:'-18px'},
+    {left:'60%',animDur:'3.9s',delay:'0.4s',dx:'8px'},
+  ];
+  const wrap = document.createElement('div');
+  wrap.className = 'pcard-wrap';
+  wrap.dataset.c = p.c;
+  const parts = partPositions.map(pp =>
+    `<div class="part" style="left:${pp.left};--dur:${pp.animDur};--delay:${pp.delay};--dx:${pp.dx}"></div>`
+  ).join('');
+  wrap.innerHTML = `
+    <div class="pcard" id="pcard-${idx}">
+      <div class="pcard-glow"></div>
+      <div class="pcard-inner">
+        <div class="pcard-particles">${parts}</div>
+        <div class="pcard-img">
+          <img src="${p.img}" alt="${p.n}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="fb">${emo[p.c]||'🌿'}</div>
+          ${p.badge ? `<div class="pbadge">${p.badge}</div>` : ''}
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-name">${p.n}</div>
+          <div class="pcard-qty">${p.q}</div>
+          <div class="pcard-prices">
+            <span class="p-mrp">${p.m}</span>
+            <span class="p-dp">${p.d}</span>
+          </div>
+        </div>
+        <div class="pcard-foot">
+          <div class="p-bv">BV <b>${p.b}</b></div>
+          <div class="p-enquire-wrap">
+            <div class="p-enquire-ring"></div>
+            <button class="p-enquire" onclick="enquireProd('${p.n}','${p.d}')">
+              <span>Enquire Now</span>
+              <span class="p-enquire-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>`;
-  grid.appendChild(div);
-});
-
-// Filter
-document.getElementById('ftabs').addEventListener('click',e=>{
-  const t=e.target.closest('.ftab'); if(!t) return;
-  document.querySelectorAll('.ftab').forEach(x=>x.classList.remove('on'));
-  t.classList.add('on');
-  const c=t.dataset.c;
-  document.querySelectorAll('.pcard').forEach(x=>x.classList.toggle('hide',c!=='all'&&x.dataset.c!==c));
-});
-
-// Enquire
-function enquireProd(name,price){
-  const msg=encodeURIComponent(`Hi Garre Ramesh Babu! 🌿\nI'm interested in: *${name}*\nDP Price: ${price}\n\nPlease share availability and delivery details.`);
-  window.open(`https://wa.me/919885348591?text=${msg}`,'_blank');
-  toast(`Opening WhatsApp for ${name}...`);
-}
-
-// Contact form
-function sendEnquiry(){
-  const n=document.getElementById('fn').value.trim();
-  const p=document.getElementById('fp').value.trim();
-  const pr=document.getElementById('fpr').value.trim();
-  const m=document.getElementById('fm').value.trim();
-  if(!n||!p){toast('⚠ Please enter name and phone number');return;}
-  const msg=encodeURIComponent(`Hi Garre Ramesh Babu! 🌿\nName: ${n}\nPhone: ${p}\nProduct: ${pr||'General enquiry'}\nMessage: ${m||'Interested in your products'}\n\nPlease get in touch.`);
-  window.open(`https://wa.me/919885348591?text=${msg}`,'_blank');
-  document.getElementById('fsuc').style.display='block';
-  toast('✅ WhatsApp opened!');
-}
-
-// Toast
-function toast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
-
-// Scroll reveal
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);ro.unobserve(e.target);}
+  grid.appendChild(wrap);
+  // ─── 3D TILT ON MOUSEMOVE ───
+  const card = wrap.querySelector('.pcard');
+  wrap.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const cx2 = r.width / 2;
+    const cy2 = r.height / 2;
+    const rotX = ((y - cy2) / cy2) * -12;
+    const rotY = ((x - cx2) / cx2) * 12;
+    card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.04)`;
+    card.style.boxShadow = `${-rotY*2}px ${rotX*2}px 48px rgba(201,168,76,0.25), 0 32px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08)`;
+    // light follow
+    const px = (x/r.width)*100;
+    const py = (y/r.height)*100;
+    card.style.setProperty('--lx', px+'%');
+    card.style.setProperty('--ly', py+'%');
   });
-},{threshold:0.1});
-document.querySelectorAll('.reveal,.pcard').forEach(el=>ro.observe(el));
-
+  wrap.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+    card.style.boxShadow = '';
+  });
+  wrap.addEventListener('mousedown', () => {
+    card.style.transform += ' scale(0.97)';
+  });
+  wrap.addEventListener('mouseup', () => {
+    wrap.dispatchEvent(new MouseEvent('mouseleave'));
+  });
+});
+// Filter
+document.getElementById('ftabs').addEventListener('click', e => {
+  const t = e.target.closest('.ftab');
+  if(!t) return;
+  document.querySelectorAll('.ftab').forEach(x => x.classList.remove('on'));
+  t.classList.add('on');
+  const c = t.dataset.c;
+  document.querySelectorAll('.pcard-wrap').forEach(x => {
+    const show = c === 'all' || x.dataset.c === c;
+    x.classList.toggle('hide', !show);
+  });
+});
+// Enquire
+function enquireProd(name, price) {
+  const msg = encodeURIComponent(`Hi Garre Ramesh Babu! 🌿\nI'm interested in: *${name}*\nDP Price: ${price}\n\nPlease share availability and delivery details.`);
+  window.open(`https://wa.me/919885348591?text=${msg}`, '_blank');
+  showToast(`Opening WhatsApp for ${name}...`);
+}
+// Contact form
+function sendEnquiry() {
+  const n = document.getElementById('fn').value.trim();
+  const p = document.getElementById('fp').value.trim();
+  const pr = document.getElementById('fpr').value.trim();
+  const m = document.getElementById('fm').value.trim();
+  if(!n || !p){showToast('⚠ Please enter name and phone number'); return;}
+  const msg = encodeURIComponent(`Hi Garre Ramesh Babu! 🌿\nName: ${n}\nPhone: ${p}\nProduct: ${pr||'General enquiry'}\nMessage: ${m||'Interested in your products'}\n\nPlease get in touch.`);
+  window.open(`https://wa.me/919885348591?text=${msg}`, '_blank');
+  document.getElementById('fsuc').style.display = 'block';
+  showToast('✅ WhatsApp opened!');
+}
+// Toast
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+// Scroll reveal (cards + general)
+const ro = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 60);
+      ro.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal, .pcard-wrap').forEach(el => ro.observe(el));
 // Nav scroll
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').style.borderBottomColor=window.scrollY>40?'rgba(201,168,76,0.2)':'rgba(201,168,76,0.12)';
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.borderBottomColor =
+    window.scrollY > 40 ? 'rgba(201,168,76,0.2)' : 'rgba(201,168,76,0.12)';
 });
 </script>
 </body>
